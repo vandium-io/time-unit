@@ -3,7 +3,7 @@
 
 # time-unit
 
-Time Unit Conversion utility that mimics the conversion functionality of Java's TimeUnit class.
+Time Unit Conversion utility that mimics the conversion functionality of Java's [TimeUnit](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html) class.
 
 ## Features
 
@@ -18,6 +18,18 @@ Install via npm.
 	npm install time-unit --save
 
 ## Getting Started
+
+To use time unit in your project:
+
+```js
+const TimeUnit = require( 'time-unit' );
+
+let milliseconds = TimeUnit.seconds.toMillis( 1 );
+// milliseconds = 1000
+
+let minutes = TimeUnit.hours.toMinutes( 1 );
+// minutes = 60
+```
 
 ## Feedback
 
