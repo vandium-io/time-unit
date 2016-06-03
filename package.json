@@ -1,0 +1,26 @@
+{
+  "name": "time-unit",
+  "version": "1.0.0",
+  "description": "time unit conversion utility",
+  "keywords": [
+    "time",
+    "conversion",
+    "TimeUnit"
+  ],
+  "main": "lib/time_unit.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vandium-io/time-unit.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --recursive",
+    "coverage": "./node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha -- -R spec --recursive"
+  },
+  "author": "Vandium Software Inc.",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.5.3"
+  }
+}
