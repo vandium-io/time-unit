@@ -8,6 +8,7 @@ Time Unit Conversion utility that mimics the conversion functionality of Java's 
 ## Features
 
 * Easy to use
+* Parses strings with time units
 * Low overhead
 * No dependencies
 
@@ -29,6 +30,9 @@ let milliseconds = TimeUnit.seconds.toMillis( 1 );
 
 let minutes = TimeUnit.hours.toMinutes( 1 );
 // minutes = 60
+
+let milliseconds = TimeUnit.milliseconds.parse( '1s' );
+// milliseconds = 1000
 ```
 
 ## Feedback
