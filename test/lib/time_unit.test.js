@@ -140,5 +140,29 @@ describe( 'lib/time_unit', function() {
                 expect( timeUnit.seconds.convert.bind( timeUnit.seconds, 1, {} ) ).to.throw( 'invalid time unit' );
             });
         });
+
+        describe( '.parse', function() {
+
+            it( 'normal operation', function() {
+
+                expect( timeUnit.milliseconds.parse( '1s' ) ).to.equal( 1000 );
+                expect( timeUnit.milliseconds.parse( '1', timeUnit.seconds ) ).to.equal( 1000 );
+                expect( timeUnit.milliseconds.parse( '1ms' ) ).to.equal( 1 );
+                expect( timeUnit.seconds.parse( '1' ) ).to.equal( 1 );
+
+                expect( timeUnit.seconds.parse( '1ns' ) ).to.equal( 1e-9 );
+                expect( timeUnit.seconds.parse( '1us' ) ).to.equal( 1e-6 );
+                expect( timeUnit.seconds.parse( '1ms' ) ).to.equal( 1e-3 );
+                expect( timeUnit.seconds.parse( '1s' ) ).to.equal( 1 );
+                expect( timeUnit.seconds.parse( '1m' ) ).to.equal( 1*60 );
+                expect( timeUnit.seconds.parse( '1h' ) ).to.equal( 1*60*60 );
+                expect( timeUnit.seconds.parse( '1d' ) ).to.equal( 1*60*60*24 );
+            });
+
+            it( 'fail: when string cannot be parsed', function() {
+
+                expect( timeUnit.seconds.parse.bind( timeUnit.seconds, '1g' ) ).to.throw( 'invalid string: 1g' );
+            });
+        });
     });
 });
